@@ -1,6 +1,6 @@
 <?php
-    class WordCount {
-        function calcSent($input_sentence, $input_word) {
+    class RepeatCounter {
+        function countRepeats($input_sentence, $input_word) {
             $count = 0; //count how many words
 
             //make sure we are comparing the same words without capitalization being a bother
@@ -32,6 +32,15 @@
             //Gosh, I have always been misspelling the word "sentence".
             //I keep wanting to write "sentance" and now it is giving me errors
             //because that is a completely different variable to PHP.
+
+
+            //When you said check for full word matches only I knew you didn't want "to"
+            //to match "together", but I was unsure if you wanted "landlord" to match
+            //"landlords". I am assuming you meant no because you said full word matches
+            //only.
         }
+
+
+
     }
 ?>
