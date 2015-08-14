@@ -15,7 +15,8 @@
 
             //look at each word and lets get to matching!
             foreach ($input_sentence_array as $word_in_sentence) {
-                if ($word_in_sentence == $input_word) {$count++;}
+                $word_pattern = "/" . $input_word . "/";
+                if (preg_match($word_pattern, $word_in_sentence)) {$count++;}
             }
 
             return $count;

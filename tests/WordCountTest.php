@@ -78,7 +78,7 @@
         //Test 5: test to see if:
         //Sentance: A z
         //Word: z q
-        //Returns: error.
+        //Returns: error
         function test_WordCount_z_qAnducA_zReturnsErr() {
             //Arrange
             $test_WordCount = new WordCount;
@@ -96,7 +96,7 @@
         //Test 6: test to see if:
         //Sentance: A z
         //Word: z+
-        //Returns: error.
+        //Returns: error
         function test_WordCount_z_plusAnda_zReturnsErr() {
             //Arrange
             $test_WordCount = new WordCount;
@@ -108,6 +108,45 @@
 
             //Assert
             $this->assertEquals("Matching word can only contain letters a-z.", $result);
+        }
+
+
+        //Test 7: test to see if:
+        //Sentance: Those darn greedy landlords!
+        //Word: landlords
+        //Returns: 1
+        function test_WordCount_landlordsAndSentReturns1() {
+            //Arrange
+            $test_WordCount = new WordCount;
+            //need to make sure to parse off the "!"and the end of landlords
+            $input_sentence = 'Those darn greedy landlords!';
+            $input_word = 'landlords';
+
+            //Act
+            $result = $test_WordCount->calcSent($input_sentence, $input_word);
+
+            //Assert
+            $this->assertEquals(1, $result);
+        }
+
+
+        //Test 8: test to see if:
+        //Sentance: I am gonna to go to the store, except I don't like the store.
+        //Word: store
+        //Returns: 2
+        function test_WordCount_storeAndSentReturns2() {
+            //Arrange
+            $test_WordCount = new WordCount;
+            //instead let's just match the word with preg_match to parse off all non a-z characters
+            //That way, "store," and "store." will match "store".
+            $input_sentence = 'I am gonna to go to the store, except I don\'t like the store.';
+            $input_word = 'store';
+
+            //Act
+            $result = $test_WordCount->calcSent($input_sentence, $input_word);
+
+            //Assert
+            $this->assertEquals(2, $result);
         }
 
     }
