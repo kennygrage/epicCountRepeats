@@ -149,6 +149,27 @@
             $this->assertEquals(2, $result);
         }
 
+
+        //Test 9: test to see if:
+        //Sentance: I am going to the store together with my friends.
+        //Word: to
+        //Returns: 1
+        function test_WordCount_toAndSentReturns1() {
+            //Arrange
+            $test_WordCount = new WordCount;
+            $input_sentence = 'I am going to the store together with my friends.';
+            //I realized after test 8 that the way I did it the word "to" would match "together", so I had to re-think what I was doing.
+            //I made this test to make sure I only get one match from "to" instead of two matches: "to" and "together".
+            $input_word = 'to';
+
+            //Act
+            $result = $test_WordCount->calcSent($input_sentence, $input_word);
+
+            //Assert
+            $this->assertEquals(1, $result);
+        }
+
+
     }
 
 ?>

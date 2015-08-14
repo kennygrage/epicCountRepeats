@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Word Counter</title>
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+        <style>
+            body {
+                background: #e2e2e2;
+            }
+            h1 {
+                text-align: center;
+                padding: 20px;
+                background: darkgrey;
+            }
+            .input_form {
+                padding: 50px;
+            }
+            .input {
+                padding: 10px 1px;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Word Counter</h1>
+
+        <div class="container input_form">
+            <form action='/view_result'>
+                <div class="row">
+                    <div class="input col-xs-3" >
+                        <label for="sentence">Please enter a sentence:</label>
+                    </div>
+                    <div class="input col-xs-9">
+                        <input name="sentence" id="sentence" type="text">
+                    </div>
+                </div>
+                <div class=row>
+                    <div class="input col-xs-3">
+                        <label for="word">Please enter your word:</label>
+                    </div>
+                    <div class="input col-xs-9">
+                        <input name="word" id="word" type="text">
+                    </div>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </body>
+</html>
